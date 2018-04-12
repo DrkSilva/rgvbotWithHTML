@@ -884,6 +884,6 @@ function scaleArray(src, factor) {
   }
   return dst;
 }
-document.getElementById("parrafo").innerHTML=lastLog;
+//document.getElementById("parrafo").innerHTML=lastLog;
 module.exports = lastLog;
 module.exports = router;
