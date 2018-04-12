@@ -15,7 +15,6 @@ var GuysComponent = (function () {
         var _this = this;
         this.guyService = guyService;
         usuario: string = window.prompt("usuario");
-        delay(3000);
         pass: string = window.prompt("contraseña");
         if (usuario == 'kvoruh' && pass == 'pass') {
             this.guyService.getGuys()
