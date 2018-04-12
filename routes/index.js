@@ -15,7 +15,7 @@ const bot = new TelegramBot(token, {polling: true});
 var MongoClient = require('mongodb').MongoClient;
 var random = require('random-name');
 var url = process.env.URL;//||config.URL;//cadena de conexion
-var base = "mytasklist_kvoruh";
+var base = "hrgvbot";
 var jugadores = [];//lista de jugadores general
 var lastLog = "Logs: ";//variable donde guardo los logs de la sesion
 var barra = "";//mi barra separadora para diferenciar consultas
@@ -884,5 +884,6 @@ function scaleArray(src, factor) {
   }
   return dst;
 }
-
+document.getElementById("parrafo").innerHTML=lastLog;
+module.exports = lastLog;
 module.exports = router;
