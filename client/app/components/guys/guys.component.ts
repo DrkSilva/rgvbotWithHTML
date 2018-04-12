@@ -24,10 +24,7 @@ export class GuysComponent {
     
 
     constructor(private guyService:GuyService){
-        //usuario: string = window.prompt("usuario");
-        //pass: string = window.prompt("contraseña");
-        /*if(usuario=='kvoruh'&&pass=='pass')
-        {*/
+        
             this.guyService.getGuys()
                 .subscribe(guys => {
                     this.guys = guys;
@@ -36,7 +33,6 @@ export class GuysComponent {
                 .subscribe(users => {
                     this.users = users;
                     }); 
-        //}
     }
 
     addGuy(event){
