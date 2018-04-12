@@ -1,0 +1,125 @@
+
+        <div style="height: 87%;" class="grid-container">
+            <div class="item1">
+                <input style="height: 94%;" type="button" (click)="openAddNav()" value=">">
+            </div>
+            <div class="item2">
+                <table width="100%">
+                    <caption>Usuarios dentro de la base de datos</caption>
+                    <tr>
+                        <th style="text-align: center;">Ch.</th>
+                        <th style="text-align: center;">Usuario</th>
+                        <!--<th style="text-align: center;">Apellido</th>-->
+                        <th style="text-align: center;" colspan="2">Opciones</th>
+                    </tr>
+                    <tr *ngFor="let guy of guys">
+                        <th *ngIf="guy.isWorking" style="text-align: center;background-color: #5cb85c;" width="50px">
+                            <input style="opacity: 0" type="checkbox" class="checkmark" [checked]="guy.isWorking" (click)="updateStatus(guy)">
+                        </th>
+                        <th *ngIf="!guy.isWorking" style="text-align: center;background-color: #c9302c;" width="50px">
+                            <input style="opacity: 0" type="checkbox" class="checkmark" [checked]="guy.isWorking" (click)="updateStatus(guy)">
+                        </th>
+                        <td (click)="Select(guy)">
+                            {{guy.name}}  
+                        </td> 
+                        <!--<td>
+                            {{guy.subname}} 
+                        </td>-->
+                        <td class="boton" style="text-align: center;" width="100px">
+                            <input type="button" style="width:100%;height: 100%;" (click)="deleteGuy(guy._id)" value=" Borrar" class="btn btn-danger-edit">
+                        </td>
+                        <td class="boton" style="text-align: center;" width="100px">
+                            <input type="button" style="width:100%;height: 100%;" (click)="openNav(guy._id)" value=" Editar" class="btn btn-danger-edit">
+                        </td>
+                        <br><br>
+                    </tr>
+                </table>
+            </div>
+            <div class="item3" *ngIf="selected">
+                <table width="100%"  *ngIf="selected">
+                    <caption>Informacion del usuario seleccionado</caption>
+                    <tr>
+                        <td width="50%">Nombre:</td>
+                        <td>{{selectedGuy.name}}</td>
+                    </tr>
+                    <tr>
+                        <td width="50%">Apellido:</td>
+                        <td>{{selectedGuy.subname}}</td>
+                    </tr>
+                    <tr>
+                        <td width="50%">Id:</td>
+                        <td>{{selectedGuy._id}}</td>
+                    </tr>
+                    <tr *ngIf="selectedGuy.isWorking">
+                        <td colspan="2">Trabajando</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="myNav" class="overlay">
+              <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+              <div class="overlay-content" style="padding: 20px">
+                    <h1 style="font-size: 50pt; font-weight: bold;">Introducir nuevo nombre</h1>
+                    <input #inputq style="font-size: 25pt; height: 100px; padding: 25px;" type="text" [(ngModel)]="newname" name="newname" class="form-control" placeholder="Nombre">
+                    <h1 style="font-size: 50pt; font-weight: bold;">Introducir nuevo apellido</h1>
+                    <input #inputq style="font-size: 25pt; height: 100px;padding: 25px;" type="text" [(ngModel)]="newsubname" name="newsubname" class="form-control" placeholder="Apellido">
+                    <input  style="font-size: 25pt;padding: 25px;width: 100%;" type="button"  *ngIf="inputq.value!=''"  (click)="closeNav();update()" value="Modificar" class="btn btn-success">
+                    <br><br>
+                    <input style="font-size: 25pt;padding: 25px;width: 100%;" type="button" *ngIf="inputq.value==''"  value="Modificar" class="btn disabled">
+              </div>
+            </div>
+
+            
+        </div>
+        <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn2" (click)="closeAddNav()">&times;</a>
+              <table width="100%">
+                    <caption>Rellenar la informacion necesaria para poder añadir nuevo usuario</caption>
+                    <tr>
+                        <th class="principal" style="text-align: center;">
+                            <input #input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Nombre">
+                            <input #input type="text" [(ngModel)]="subname" name="subname" class="form-control" placeholder="Apellido">
+                            <input type="button"  *ngIf="input.value!=''" style="width: 100%; border-color: white;" (click)="addGuy($event)" value="Añadir" class="btn btn-success">
+                            <input type="button" *ngIf="input.value==''" style="width: 100%; border-color: white;" value="Añadir" 
+                            class="btn disabled">
+                        </th>
+                    </tr> 
+                </table>
+                <table width="100%">
+                    <caption>Ordenar la lista utilizando estos botones</caption>
+                    <tr>
+                        <td  style="height: 50px;padding: 5px;">
+                            <input type="button" style=" border-color: white;" (click)="OrdName()" value="Nombre" 
+                            class="btn btn-success">
+                            <input type="button" style=" border-color: white;" (click)="OrdNameDes()" value="Nombre" 
+                            class="btn btn-danger">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" style=" border-color: white;" (click)="OrdSub()" value="Apellido" 
+                            class="btn btn-success">
+                            <input type="button" style=" border-color: white;" (click)="OrdSubDes()" value="Apellido" 
+                            class="btn btn-danger">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" style=" border-color: white;" (click)="OrdIsW()" value="Trabajando" 
+                            class="btn btn-success">
+                            <input type="button" style=" border-color: white;" (click)="OrdIsWDes()" value="Trabajando" 
+                            class="btn btn-danger"> 
+                        </td>
+                    </tr>
+                </table> 
+                <div style="height: : 500px; overflow: auto;">
+                <table width="100%" >
+                    <caption>Ips recogidas</caption>
+                    <tr *ngFor="let user of users">
+                        <td>
+                            {{user.ip}}  
+                        </td>
+                        <br><br>
+                    </tr>
+                </table>
+            </div>
+        </div>
