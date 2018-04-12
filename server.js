@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 
-var paints = require('./routes/paints');
+var paints = require('./routes/paint');
 var port = process.env.PORT || 3000;
 
 var app = express();
