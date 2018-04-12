@@ -1,2 +1,2 @@
-cd client
+dir
 npm start
