@@ -1,1 +1,1 @@
-worker:npm start --prefix ./client
+worker: node server.js
