@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('mongodb://kvoruh:password@ds115799.mlab.com:15799/mytasklist_kvoruh', ['guys']);
-var db2 = mongojs('mongodb://kvoruh:password@ds115799.mlab.com:15799/mytasklist_kvoruh', ['users']);
+var url = process.env.URL;
+var db = mongojs(url, ['guys']);
+var db2 = mongojs(url, ['users']);
 router.get('/users', function(req, res, next){
     db2.users.find(function(err, users){
         if(err){ 
