@@ -14,18 +14,14 @@ var GuysComponent = (function () {
     function GuysComponent(guyService) {
         var _this = this;
         this.guyService = guyService;
-        usuario: string = window.prompt("usuario");
-        pass: string = window.prompt("contraseña");
-        if (usuario == 'kvoruh' && pass == 'pass') {
-            this.guyService.getGuys()
-                .subscribe(function (guys) {
-                _this.guys = guys;
-            });
-            this.guyService.getUsers()
-                .subscribe(function (users) {
-                _this.users = users;
-            });
-        }
+        this.guyService.getGuys()
+            .subscribe(function (guys) {
+            _this.guys = guys;
+        });
+        this.guyService.getUsers()
+            .subscribe(function (users) {
+            _this.users = users;
+        });
     }
     GuysComponent.prototype.addGuy = function (event) {
         var _this = this;
@@ -41,19 +37,6 @@ var GuysComponent = (function () {
             _this.guys.push(guy);
             _this.name = '';
             _this.subname = '';
-        });
-        console.log('El usuario ' + this.name + ' fué añadido a la base');
-        this.addUser();
-    };
-    GuysComponent.prototype.addUser = function () {
-        var _this = this;
-        var newUser = {
-            ip: '192.168.1.1'
-        };
-        console.log(this.name + ' creado');
-        this.guyService.addUser(newUser)
-            .subscribe(function (user) {
-            _this.users.push(user);
         });
         console.log('El usuario ' + this.name + ' fué añadido a la base');
     };

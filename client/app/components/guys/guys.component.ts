@@ -50,22 +50,11 @@ export class GuysComponent {
                 this.subname = '';
             });
             console.log('El usuario '+this.name+' fué añadido a la base');
-        this.addUser();
+        
 
     }
 
-    addUser(){
-        var newUser = {
-            ip: '192.168.1.1';
-        }
-
-        console.log(this.name+' creado');
-        this.guyService.addUser(newUser)
-            .subscribe(user => {
-                this.users.push(user);
-            });
-            console.log('El usuario '+this.name+' fué añadido a la base');
-    }
+    
     
     deleteGuy(id){
         var guys = this.guys;
