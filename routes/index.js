@@ -884,5 +884,5 @@ function scaleArray(src, factor) {
   }
   return dst;
 }
-exports.lastLog = lastLog;
+
 module.exports = router;
