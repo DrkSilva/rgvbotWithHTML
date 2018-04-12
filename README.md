@@ -8,6 +8,7 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/RGVylar/rgvbotWithHTML.svg)](https://github.com/RGVylar/rgvbotWithHTML)
 [![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/y/RGVylar/rgvbotWithHTML.svg)](https://github.com/RGVylar/rgvbotWithHTML/commits/master)
 ![GitHub language count](https://img.shields.io/github/languages/count/RGVylar/rgvbotWithHTML.svg)
+![GitHub top language](https://img.shields.io/github/languages/top/RGVylar/rgvbotWithHTML.svg)
 
 
 
