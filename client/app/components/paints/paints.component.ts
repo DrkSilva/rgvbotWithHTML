@@ -1,4 +1,4 @@
-çimport { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import {PaintService} from '../../services/paint.service';
 import {Paint} from '../../../Paint';
 import {User} from '../../../User';

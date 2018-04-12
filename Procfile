@@ -1,1 +1,1 @@
-worker: node build.bat
+worker: node server.js
