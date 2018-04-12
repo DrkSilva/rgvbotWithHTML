@@ -32,25 +32,6 @@ router.post('/user', function(req, res, next){
     }
 });
 
-// Matches /editable
-bot.onText(/\/editable/, function onEditableText(msg) {
-  const opts = {
-    reply_markup: {
-      inline_keyboard: [
-        [
-          {
-            text: 'Edit Text',
-            // we shall check for this value when we listen
-            // for "callback_query"
-            callback_data: 'edit'
-          }
-        ]
-      ]
-    }
-  };
-  bot.sendMessage(msg.from.id, 'Original Text', opts);
-});
-
 // Get All Guys
 router.get('/guys', function(req, res, next){
     db.guys.find(function(err, guys){
