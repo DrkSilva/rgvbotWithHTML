@@ -1,0 +1,2 @@
+CD .\client
+npm start

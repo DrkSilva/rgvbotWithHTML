@@ -1,0 +1,8 @@
+{
+  "server": {
+    "baseDir": "views",
+    "routes": {
+      "/node_modules": "node_modules"
+    }
+  }
+}
