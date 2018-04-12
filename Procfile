@@ -1,4 +1,4 @@
-web:cd ./client
-web:npm start
-web:cd ..
-worker: node server.js
+worker:cd ./client
+worker:npm start
+worker:cd ..
+worker:cd ./client node server.js
