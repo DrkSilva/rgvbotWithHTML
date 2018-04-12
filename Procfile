@@ -1,1 +1,1 @@
-worker:cd ./client
+worker:npm start --prefix ./client
