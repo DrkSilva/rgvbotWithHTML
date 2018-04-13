@@ -5,6 +5,8 @@
 
 
 
+[![GitHub forks](https://img.shields.io/github/forks/RGVylar/rgvbotWithHTML.svg?style=social&label=Fork)](https://github.com/RGVylar/rgvbotWithHTML/fork)
+
 
 
 
